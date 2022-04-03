@@ -6,8 +6,12 @@ return [
     'action' => 'Action',
     'thumbnails' => 'Thumbnails',
     'created_at' => 'Created At',
+    'price' => 'Price',
+    'description' => 'Description',
 
     // Category
-    'category_name' => 'Nama Kategori',
+    'category_name' => 'Category Name',
 
+    // Product
+    'product_name' => 'Product Name',
 ];

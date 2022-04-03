@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\Master\CategoryController;
+use App\Http\Controllers\Backend\Master\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Contracts\Role;
@@ -39,6 +40,13 @@ Route::prefix('app')->group(function () {
                 Route::get('/create',[CategoryController::class,'create'])->name('create');
                 Route::get('/create',[CategoryController::class,'create'])->name('create');
                 Route::post('/create',[CategoryController::class,'store'])->name('store');
+            });
+
+            Route::prefix('product')->name('product.')->group(function(){
+                Route::get('/',[ProductController::class,'index'])->name('index');
+                Route::get('/create',[ProductController::class,'create'])->name('create');
+                Route::get('/create',[ProductController::class,'create'])->name('create');
+                Route::post('/create',[ProductController::class,'store'])->name('store');
             });
 
         });

@@ -2,22 +2,25 @@
 
     <label for="{{ $id }}">{{ $label }}</label>
 
-    <input
-        type="{{ $type }}"
-        class="form-control @error($name) is-invalid @enderror"
-        name="{{ $name }}"
-        id="{{ $id }}"
-        placeholder="{{ $placeholder ?? '' }}"
-        @if( $value !== null && $value !== "" )
-            value="{{ $value }}"
+    @if ($type != 'textarea')
+        <input type="{{ $type }}" class="form-control @error($name) is-invalid @enderror"
+            name="{{ $name }}" id="{{ $id }}" placeholder="{{ $placeholder ?? '' }}"
+            @if ($value !== null && $value !== '') value="{{ $value }}"
         @else
-            value="{{ old($name) }}"
-        @endif
-        {{ $attributes->merge(['class' => 'form-group']) }}
-        {{ $isRequired ? 'required' : '' }} >
-        
+            value="{{ old($name) }}" @endif
+            {{ $attributes->merge(['class' => 'form-group']) }} {{ $isRequired ? 'required' : '' }}>
+    @else
+        <textarea rows="3" class="form-control @error($name) is-invalid @enderror" name="{{ $name }}" id="{{ $id }}"   {{ $attributes->merge(['class' => 'form-group']) }} {{ $isRequired ? 'required' : '' }} >
+         @if ($value !== null && $value !== '')
+{{ $value }}
+@else
+{{ old($name) }}
+@endif
+</textarea>
+    @endif
 
-    @if($hintText)
+
+    @if ($hintText)
         <small class="form-text text-muted">{{ $hintText }}</small>
     @endif
 

@@ -7,4 +7,5 @@ return [
     'add'              => 'Tambah',
     'detail'           => 'Detail',
     'cancel'           => 'Batalkan',
+    'select'           => 'Pilih',
 ];
