@@ -1,6 +1,10 @@
 <?php
 return [
     'save'             => 'Save',
-    'edit'             => 'Update',
-    'delete'             => 'Delete',
+    'edit'             => 'Edit',
+    'update'           => 'Update',
+    'delete'           => 'Delete',
+    'add'              => 'Add',
+    'detail'           => 'Detail',
+    'cancel'            => 'Cancel',
 ];

@@ -1,6 +1,10 @@
 <?php
 return [
     'save'             => 'Simpan',
-    'edit'             => 'Perbarui',
-    'delete'             => 'Hapus',
+    'edit'             => 'Edit',
+    'udpdate'          => 'Perbarui',
+    'delete'           => 'Hapus',
+    'add'              => 'Tambah',
+    'detail'           => 'Detail',
+    'cancel'           => 'Batalkan',
 ];

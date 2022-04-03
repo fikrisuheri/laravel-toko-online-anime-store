@@ -1,4 +1,4 @@
-<div {{ $attributes->merge(['class' => 'form-group']) }}>
+<div class="form-group">
 
     <label for="{{ $id }}">{{ $label }}</label>
 
@@ -7,13 +7,13 @@
         class="form-control @error($name) is-invalid @enderror"
         name="{{ $name }}"
         id="{{ $id }}"
-
+        placeholder="{{ $placeholder ?? '' }}"
         @if( $value !== null && $value !== "" )
             value="{{ $value }}"
         @else
             value="{{ old($name) }}"
         @endif
-
+        {{ $attributes->merge(['class' => 'form-group']) }}
         {{ $isRequired ? 'required' : '' }} >
         
 

@@ -1,4 +1,6 @@
 <?php
 return [
-    'dashboard'             => 'Dashboard',
+    'dashboard'         => 'Dashboard',
+    'trash'             => 'Tempat Sampah',
+    'category'          => 'Kategori'
 ];
