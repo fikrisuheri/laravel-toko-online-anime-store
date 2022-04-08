@@ -30,7 +30,7 @@
                                         {{ __('button.edit') }}</a>
                                     <a class="dropdown-item has-icon" href="#"><i class="far fa-eye"></i>
                                         {{ __('button.detail') }}</a>
-                                    <a class="dropdown-item has-icon" href="#"><i class="fa fa-trash"></i>
+                                    <a class="dropdown-item has-icon btn-delete" href="{{ route('master.category.delete',$category->id) }}"><i class="fa fa-trash"></i>
                                         {{ __('button.delete') }}</a>
                                 </x-button.dropdown-button>
                             </td>

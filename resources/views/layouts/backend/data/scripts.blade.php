@@ -14,5 +14,30 @@
   <!-- Template JS File -->
   <script src="{{ asset('stisla') }}/js/scripts.js"></script>
   <script src="{{ asset('stisla') }}/js/custom.js"></script>
-  <script src="{{ asset('stisla') }}/js/page/modules-datatables.js"></script>
+  {{-- <script src="{{ asset('stisla') }}/js/page/modules-datatables.js"></script> --}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script>
+    $(() => {
+      $("#table-1").dataTable({
+        responsive : true
+      });
+    })
+    
+    $('.btn-delete').click(function(e) {
+      e.preventDefault();
+      var url = $(this).attr('href');
+      swal({
+        title: "{{ __('message.dialog_title') }}",
+        text: "{{ __('message.dialog_delete') }}",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location.href = url;
+        }
+      });
+    });
+  </script>
   @stack('js')

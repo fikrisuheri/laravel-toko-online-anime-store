@@ -6,7 +6,7 @@ return [
     'harddelete'        => 'Data berhasil dihapus',
     'restore'           => 'Data berhasil dikembalikan',
 
-    'dialog_title'      => 'Kamu Yakin ?',
+    'dialog_title'      => 'Apakah anda yakin?',
     'dialog_delete'     => 'Data Berikut akan dihapus ?',
     'dialog_yes'        => 'Ya, Hapus',
     'dialog_no'         => 'Batalkan',

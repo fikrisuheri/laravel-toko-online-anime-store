@@ -14,4 +14,10 @@ return [
 
     // Product
     'product_name' => 'Product Name',
+
+    // Order
+    'order_invoice' => 'Invoice',
+    'order_customer' => 'Customer Name',
+    'order_total' => 'Total Pay',
+    'order_status' => 'Order Status',
 ];

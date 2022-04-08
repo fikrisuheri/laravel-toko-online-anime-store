@@ -31,4 +31,10 @@ class CategoryController extends Controller
         $this->category->store($request->all());
         return redirect()->route('master.category.index')->with('success',__('message.store'));
     }
+
+    public function delete($id)
+    {
+        $this->category->softDelete($id);
+        return redirect()->back()->with('success',__('message.delete'));
+    }
 }

@@ -3,7 +3,7 @@
      {{ $header ?? '' }}
     </div>
     <div class="card-body">
-      <div class="table-responsive">
+      <div class="">
         <table class="table table-striped" id="table-1">
           <thead>
            {{ $thead }}

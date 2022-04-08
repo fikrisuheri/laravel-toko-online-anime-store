@@ -14,4 +14,10 @@ return [
 
     // Product
     'product_name' => 'Nama Produk',
+
+    // Order
+    'order_invoice' => 'Invoice',
+    'order_customer' => 'Nama Pemesan',
+    'order_total' => 'Total Pembayaran',
+    'order_status' => 'Status Pesanan',
 ];
