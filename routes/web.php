@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\Feature\OrderController;
 use App\Http\Controllers\Backend\Master\CategoryController;
 use App\Http\Controllers\Backend\Master\ProductController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Contracts\Role;
@@ -18,9 +19,7 @@ use Spatie\Permission\Contracts\Role;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::prefix('app')->group(function () {
     Route::middleware(['auth'])->group(function () {
