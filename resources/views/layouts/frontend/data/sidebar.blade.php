@@ -1,31 +1,20 @@
-<div class="main-sidebar">
-    <aside id="sidebar-wrapper">
-      <div class="sidebar-brand">
-        <a href="index.html">Stisla</a>
-      </div>
-      <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">St</a>
-      </div>
-      <ul class="sidebar-menu">
-          <li class="menu-header">Menu Admin</li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-table"></i><span>Master</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="{{ route('master.category.index') }}">{{ __('menu.category') }}</a></li>
-              <li><a class="nav-link" href="{{ route('master.product.index') }}">{{ __('menu.product') }}</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-shopping-cart"></i><span>{{ __('menu.order') }}</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="{{ route('feature.order.index') }}">{{ __('menu.order_all') }}</a></li>
-              <li><a class="nav-link" href="{{ route('feature.order.index',0) }}">{{ __('menu.order_pending') }}</a></li>
-              <li><a class="nav-link" href="{{ route('feature.order.index',1) }}">{{ __('menu.order_process') }}</a></li>
-              <li><a class="nav-link" href="{{ route('feature.order.index',2) }}">{{ __('menu.order_shipped') }}</a></li>
-              <li><a class="nav-link" href="{{ route('feature.order.index',3) }}">{{ __('menu.order_completed') }}</a></li>
-              <li><a class="nav-link" href="{{ route('feature.order.index',4) }}">{{ __('menu.order_canceled') }}</a></li>
-            </ul>
-          </li>
+<nav class="navbar navbar-secondary navbar-expand-lg">
+  <div class="container">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a href="#" class="nav-link"><i class="fa fa-home"></i><span>Home</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-link has-dropdown"><i class="fa fa-list-alt"></i><span>Kategori</span></a>
+        <ul class="dropdown-menu">
+          @foreach ($siteCategories as $siteCategorie)
+          <li class="nav-item"><a href="#" class="nav-link">{{ $siteCategorie->name }}</a></li>
+          @endforeach
         </ul>
-    </aside>
+      </li>
+      <li class="nav-item active">
+        <a href="#" class="nav-link"><i class="fa fa-sign-in-alt"></i><span>Masuk</span></a>
+      </li>
+    </ul>
   </div>
+</nav>
