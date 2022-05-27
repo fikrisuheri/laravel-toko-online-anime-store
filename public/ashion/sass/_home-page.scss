@@ -1,0 +1,350 @@
+/*---------------------
+  Banner
+-----------------------*/
+.banner {
+  height: 500px;
+}
+// .banner__item {
+ 
+//   display: flex;
+//   align-items: center;
+// }
+
+.banner__text {
+
+  span {
+    font-size: 18px;
+    color: $primary-color;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 80px;
+    color: $heading-color;
+    font-family: 'Cookie', cursive;
+    margin-bottom: 15px;
+  }
+
+  a {
+    font-size: 14px;
+    color: $heading-color;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    padding: 0 0 3px;
+    display: inline-block;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: $primary-color;
+      content: "";
+    }
+  }
+}
+
+.banner__slider {
+  text-align: center;
+  padding: 150px 0 0;
+
+  &.owl-carousel {
+
+    .owl-dots {
+      position: absolute;
+      left: 0;
+      top: 430px;
+      width: 100%;
+      text-align: center;
+
+      button {
+        height: 12px;
+        width: 12px;
+        background: #a1a1a1;
+        border-radius: 50%;
+        margin-right: 10px;
+
+        &.active {
+          background: $primary-color;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------
+  Trend
+-----------------------*/
+.trend {
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.trend__content {
+
+  .section-title {
+
+    h4 {
+      font-size: 20px;
+
+      &:after {
+        bottom: -6px;
+      }
+    }
+  }
+}
+
+.trend__item {
+  overflow: hidden;
+  margin-bottom: 35px;
+}
+
+.trend__item__pic {
+  float: left;
+  margin-right: 25px;
+}
+
+.trend__item__text {
+  overflow: hidden;
+
+  h6 {
+    font-size: 14px;
+    color: $heading-color;
+    margin-bottom: 5px;
+  }
+
+  .rating {
+    line-height: 18px;
+    margin-bottom: 6px;
+
+    i {
+      font-size: 10px;
+      color: #e3c01c;
+      margin-right: -4px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .product__price {
+    color: $heading-color;
+    font-weight: 600;
+
+    span {
+      font-size: 14px;
+      color: #b1b0b0;
+      text-decoration: line-through;
+      margin-left: 4px;
+    }
+  }
+}
+
+/*---------------------
+  Discount
+-----------------------*/
+.discount__pic {
+
+  img {
+    min-width: 100%;
+    height: 100%;
+  }
+}
+
+.discount__text {
+  background: #f4f4f4;
+  height: 390px;
+  padding: 75px 90px 50px;
+  text-align: center;
+
+  a {
+    font-size: 14px;
+    color: $heading-color;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    padding: 0 0 3px;
+    display: inline-block;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: $primary-color;
+      content: "";
+    }
+  }
+}
+
+.discount__text__title {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 60px;
+
+  &:after {
+    position: absolute;
+    left: 50%;
+    top: -38px;
+    height: 183px;
+    width: 183px;
+    background: $white-color;
+    content: "";
+    border-radius: 50%;
+    z-index: -1;
+    margin-left: -91.5px;
+  }
+
+  span {
+    font-size: 12px;
+    color: $heading-color;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 60px;
+    color: $primary-color;
+    font-family: 'Cookie', cursive;
+    line-height: 46px;
+    margin-bottom: 10px;
+  }
+
+  h5 {
+    color: $primary-color;
+    font-weight: 700;
+
+    span {
+      font-size: 14px;
+      color: $heading-color;
+      margin-right: 4px;
+    }
+  }
+}
+
+.discount__countdown {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.countdown__item {
+  margin-bottom: 15px;
+  float: left;
+  width: 25%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  span {
+    font-size: 30px;
+    font-weight: 600;
+    color: $heading-color;
+    display: inline-block;
+  }
+
+  p {
+    color: $heading-color;
+    margin-bottom: 0;
+    display: inline-block;
+    font-weight: 500;
+  }
+}
+
+/*---------------------
+  Services
+-----------------------*/
+.services {
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.services__item {
+  padding-left: 65px;
+  position: relative;
+  margin-bottom: 20px;
+
+  i {
+    font-size: 36px;
+    color: $primary-color;
+    position: absolute;
+    left: 0;
+    top: 4px;
+  }
+
+  h6 {
+    color: $heading-color;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+/*---------------------
+  Instagram
+-----------------------*/
+.instagram__item {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+
+    &:after {
+      opacity: 1;
+    }
+
+    .instagram__text {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    content: "";
+    opacity: 0;
+    z-index: -1;
+    @include transition(all, .3s);
+  }
+}
+
+.instagram__text {
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(all, .3s);
+
+  i {
+    font-size: 30px;
+    color: #0d0d0d;
+  }
+
+  a {
+    font-size: 16px;
+    color: #0d0d0d;
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
+  }
+}

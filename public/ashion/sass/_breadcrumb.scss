@@ -1,0 +1,37 @@
+/*---------------------
+  Breadcrumb
+-----------------------*/
+.breadcrumb-option {
+    padding-top: 35px;
+}
+
+.breadcrumb__links {
+
+    a {
+        font-size: 15px;
+        font-weight: 500;
+        color: $heading-color;
+        margin-right: 18px;
+        display: inline-block;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            right: -14px;
+            top: 0;
+            content: '\f105';
+            font-family: "FontAwesome";
+        }
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    span {
+        font-size: 15px;
+        font-weight: 500;
+        color: #888888;
+        display: inline-block;
+    }
+}

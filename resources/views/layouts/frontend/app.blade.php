@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     @include('layouts.frontend.data.styles')
 </head>
 
-<body class="layout-3" >
-    <div id="app">
-        <div class="main-wrapper container ">
-          
-            @include('layouts.frontend.data.navbar')
-            @include('layouts.frontend.data.sidebar')
-          
-            <!-- Main Content -->
-            <div class="main-content">
-              <section class="section">
-                <div class="section-body mt-2">
-                @yield('content')
-                </div>
-              </section>
-            </div>
-          </div>
-          @include('layouts.frontend.data.footer')
+<body>
+
+    @include('layouts.frontend.data.navbar')
+    @yield('content')
+    @include('layouts.frontend.data.footer')
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
     </div>
+    <!-- Search End -->
     @include('layouts.frontend.data.scripts')
 </body>
 

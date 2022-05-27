@@ -28,7 +28,10 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $this->category->store($request->all());
+        $upload =  $request->file('thumbnails')->store('thumbnails','public');
+        $data = $request->except('thumbnails');
+        $data['thumbnails'] = $upload;
+        $this->category->store($data);
         return redirect()->route('master.category.index')->with('success',__('message.store'));
     }
 

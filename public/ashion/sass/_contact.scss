@@ -1,0 +1,129 @@
+/*---------------------
+  Contact
+-----------------------*/
+.contact {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.contact__address {
+  margin-bottom: 45px;
+
+  h5 {
+    color: $heading-color;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  ul {
+
+    li {
+      list-style: none;
+      position: relative;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+
+      h6 {
+        color: $heading-color;
+        font-weight: 600;
+        margin-bottom: 10px;
+
+        i {
+          font-size: 16px;
+          color: $primary-color;
+          margin-right: 5px;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 15px;
+        color: #444444;
+      }
+
+      span {
+        font-size: 15px;
+        color: #444444;
+        display: inline-block;
+        margin-right: 25px;
+        position: relative;
+
+        &:after {
+          position: absolute;
+          right: -15px;
+          top: 11px;
+          content: "|";
+          line-height: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact__form {
+
+  h5 {
+    color: $heading-color;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+
+  form {
+
+    input {
+      height: 50px;
+      width: 100%;
+      padding-left: 20px;
+      font-size: 14px;
+      color: #444444;
+      border: 1px solid #e1e1e1;
+      border-radius: 10px;
+      margin-bottom: 20px;
+
+      &::placeholder {
+        color: #444444;
+      }
+    }
+
+    textarea {
+      height: 130px;
+      width: 100%;
+      padding-left: 20px;
+      padding-top: 12px;
+      font-size: 14px;
+      color: #444444;
+      border: 1px solid #e1e1e1;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      resize: none;
+
+      &::placeholder {
+        color: #444444;
+      }
+    }
+  }
+}
+
+.contact__map {
+  height: 780px;
+
+  iframe {
+    width: 100%;
+  }
+}

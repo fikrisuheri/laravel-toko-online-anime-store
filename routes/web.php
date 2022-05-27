@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\Feature\OrderController;
 use App\Http\Controllers\Backend\Master\CategoryController;
 use App\Http\Controllers\Backend\Master\ProductController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Contracts\Role;
@@ -19,7 +20,6 @@ use Spatie\Permission\Contracts\Role;
 |
 */
 
-Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::prefix('app')->group(function () {
     Route::middleware(['auth'])->group(function () {
@@ -61,5 +61,8 @@ Route::prefix('app')->group(function () {
     });
 
 });
+
+Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/{categoriSlug}/{productSlug}',[FrontendProductController::class,'show'])->name('product.show');
 
 require __DIR__ . '/auth.php';

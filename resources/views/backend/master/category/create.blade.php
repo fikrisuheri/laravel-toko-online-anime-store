@@ -3,14 +3,13 @@
     <div class="row">
         <div class="col-12">
             @component('components.backend.card.card-form')
-                @slot('isfile', false)
                 @slot('action', Route('master.category.store'))
-                @slot('method', 'POST')
                 @slot('content')
 
                     <x-forms.input name="name" id="name" :label="__('field.category_name')" :isRequired="true" />
 
                     <x-forms.input name="slug" id="slug" :label="__('field.slug')" :isRequired="true" readonly />
+                    <x-forms.input type="file" name="thumbnails" id="thumbnails" :label="__('field.thumbnails')" :isRequired="true" />
 
                     <div class="text-right">
                         <a href="{{ Route('user.index') }}" class="btn btn-secondary " href="#">{{ __('button.cancel') }}</a>

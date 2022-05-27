@@ -1,66 +1,76 @@
-<div class="navbar-bg d-none d-md-block d-lg-block"></div>
-<nav class="navbar navbar-expand-lg main-navbar  left-0">
-  <a href="index.html" class="navbar-brand sidebar-gone-hide">ANIMESTORE</a>
-  <div class="navbar-nav">
-    <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars text-primary"></i></a>
-  </div>
-  <div class="ml-auto d-block d-md-none">
-    ANIME STORE
-  </div>
-  <form class="form-inline ml-auto justify-content-end">
-      <div class="search-element">
-      <input class="form-control" type="search" placeholder="Cari Produk" aria-label="Search" data-width="250">
-      <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-      <div class="search-backdrop"></div>
-    </div>
-    <ul class="navbar-nav">
-      <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search text-primary"></i></a></li>
-    @auth
-    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell icon-notification"></i></a>
-      <div class="dropdown-menu dropdown-list dropdown-menu-right">
-        <div class="dropdown-header">Notifications
-          <div class="float-right">
-            <a href="#">Mark All As Read</a>
-          </div>
-        </div>
-        <div class="dropdown-list-content dropdown-list-icons">
-          <a href="#" class="dropdown-item dropdown-item-unread">
-            <div class="dropdown-item-icon bg-primary text-white">
-              <i class="fas fa-code"></i>
-            </div>
-            <div class="dropdown-item-desc">
-              Template update is available now!
-              <div class="time text-primary">2 Min Ago</div>
-            </div>
-          </a>
-        </div>
-        <div class="dropdown-footer text-center">
-          <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-        </div>
-      </div>
-    </li>
-    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user pr-0">
-      <img alt="image" src="{{ asset('stisla') }}/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-      <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
-      <div class="dropdown-menu dropdown-menu-right">
-        <div class="dropdown-title">Logged in 5 min ago</div>
-        <a href="features-profile.html" class="dropdown-item has-icon">
-          <i class="far fa-user"></i> Profile
-        </a>
-        <a href="features-activities.html" class="dropdown-item has-icon">
-          <i class="fas fa-bolt"></i> Activities
-        </a>
-        <a href="features-settings.html" class="dropdown-item has-icon">
-          <i class="fas fa-cog"></i> Settings
-        </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item has-icon text-danger">
-          <i class="fas fa-sign-out-alt"></i> Logout
-        </a>
-      </div>
-    </li>
-    @endauth
-    </ul>
-  
-  </form>
-</nav>
+ <!-- Offcanvas Menu Begin -->
+ <div class="offcanvas-menu-overlay"></div>
+ <div class="offcanvas-menu-wrapper">
+     <div class="offcanvas__close">+</div>
+     <ul class="offcanvas__widget">
+         <li><span class="icon_search search-switch"></span></li>
+         <li><a href="#"><span class="icon_heart_alt"></span>
+             <div class="tip">2</div>
+         </a></li>
+         <li><a href="#"><span class="icon_bag_alt"></span>
+             <div class="tip">2</div>
+         </a></li>
+     </ul>
+     <div class="offcanvas__logo">
+         <a href="./index.html"><img src="{{ asset('ashion') }}/img/logo.png" alt=""></a>
+     </div>
+     <div id="mobile-menu-wrap"></div>
+     <div class="offcanvas__auth">
+         <a href="#">Login</a>
+         <a href="#">Register</a>
+     </div>
+ </div>
+ <!-- Offcanvas Menu End -->
+
+ <!-- Header Section Begin -->
+ <header class="header">
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-xl-3 col-lg-2">
+                 <div class="header__logo">
+                     <a href="./index.html"><img src="{{ asset('ashion') }}/img/logo.png" alt=""></a>
+                 </div>
+             </div>
+             <div class="col-xl-6 col-lg-7">
+                 <nav class="header__menu">
+                     <ul>
+                         <li class="active"><a href="./index.html">Home</a></li>
+                         <li><a href="./shop.html">Shop</a></li>
+                         <li><a href="#">Category</a>
+                             <ul class="dropdown">
+                                 <li><a href="./product-details.html">Product Details</a></li>
+                                 <li><a href="./shop-cart.html">Shop Cart</a></li>
+                                 <li><a href="./checkout.html">Checkout</a></li>
+                                 <li><a href="./blog-details.html">Blog Details</a></li>
+                             </ul>
+                         </li>
+                         <li><a href="./blog.html">Blog</a></li>
+                         <li><a href="./contact.html">Contact</a></li>
+                         <li><a href="./contact.html">Donate</a></li>
+                     </ul>
+                 </nav>
+             </div>
+             <div class="col-lg-3">
+                 <div class="header__right">
+                     <div class="header__right__auth">
+                         <a href="#">Login</a>
+                         <a href="#">Register</a>
+                     </div>
+                     <ul class="header__right__widget">
+                         <li><span class="icon_search search-switch"></span></li>
+                         <li><a href="#"><span class="icon_heart_alt"></span>
+                             <div class="tip">2</div>
+                         </a></li>
+                         <li><a href="#"><span class="icon_bag_alt"></span>
+                             <div class="tip">2</div>
+                         </a></li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+         <div class="canvas__open">
+             <i class="fa fa-bars"></i>
+         </div>
+     </div>
+ </header>
+ <!-- Header Section End -->
