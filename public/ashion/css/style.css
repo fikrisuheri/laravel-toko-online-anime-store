@@ -1657,7 +1657,7 @@ ol {
 }
 
 .product__details__slider__content {
-	width: calc(78% - 20px);
+	width: 100%;
 	float: left;
 	margin-left: 20px;
 }
@@ -1847,7 +1847,7 @@ ol {
 	font-size: 14px;
 	font-weight: 600;
 	color: #111111;
-	width: 150px;
+	width: 70px;
 	float: left;
 }
 
