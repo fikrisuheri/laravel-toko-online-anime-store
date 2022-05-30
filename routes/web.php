@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\Feature\OrderController;
 use App\Http\Controllers\Backend\Master\CategoryController;
 use App\Http\Controllers\Backend\Master\ProductController;
+use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
 use App\Http\Controllers\UserController;
@@ -63,6 +64,15 @@ Route::prefix('app')->group(function () {
 });
 
 Route::get('/', [HomeController::class,'index'])->name('home');
+// Route Product
+Route::get('/product', [FrontendProductController::class,'index'])->name('product.index');
+
+// Ruote Category
+Route::get('/category', [FrontendCategoryController::class,'index'])->name('category.index');
+Route::get('/category/{slug}', [FrontendCategoryController::class,'show'])->name('category.show');
+
+
 Route::get('/{categoriSlug}/{productSlug}',[FrontendProductController::class,'show'])->name('product.show');
+
 
 require __DIR__ . '/auth.php';

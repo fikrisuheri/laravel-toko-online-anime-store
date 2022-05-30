@@ -8,7 +8,6 @@
                     <div class="categories__item categories__large__item set-bg"
                         data-setbg="{{ asset('me') }}/img/goku.png">
                         <div class="categories__text">
-                            <h1>Anime Store</h1>
                             <p>Beragam Merchandise Anime Mulai Dari Tshirt, Hoddie, Action Figure Semuanya Tersedia Di Anime
                                 Store.</p>
                             <a href="#">Jelajahi Sekarang</a>
@@ -59,34 +58,18 @@
                     @foreach ($new_categories2->Products()->limit(4)->get()
         as $product)
                         <div class="col-lg-3 col-md-4 col-sm-6 mix {{ $new_categories2->slug }}">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg"
-                                    data-setbg="{{ asset('storage/' . $product->thumbnails) }}">
-                                    <div class="label new">New</div>
-                                    <ul class="product__hover">
-                                        <li><a href="{{ asset('storage/' . $product->thumbnails) }}"
-                                                class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="{{ route('product.show',['categoriSlug' => $new_categories2->slug,'productSlug' => $product->slug]) }}"><span><i class="fa fa-eye"></i></span></a></li>
-                                        <li><a href="#"><span><i class="fa fa-cart-plus"></i></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="{{ route('product.show',['categoriSlug' => $new_categories2->slug,'productSlug' => $product->slug]) }}">{{ $product->name }}</a></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="product__price">{{ $product->price }}</div>
-                                </div>
+                            @component('components.frontend.product-card')
+                                @slot('image', asset('storage/' . $product->thumbnails))
+                                @slot('route', route('product.show', ['categoriSlug' => $new_categories2->slug, 'productSlug' =>
+                                    $product->slug]))
+                                    @slot('name', $product->name)
+                                    @slot('price', $product->price)
+                                @endcomponent
                             </div>
-                        </div>
+                        @endforeach
                     @endforeach
-                @endforeach
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- Product Section End -->
-@endsection
+        </section>
+        <!-- Product Section End -->
+    @endsection

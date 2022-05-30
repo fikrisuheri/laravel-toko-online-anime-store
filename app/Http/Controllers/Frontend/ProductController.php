@@ -15,9 +15,16 @@ class ProductController extends Controller
         $this->product = new CrudRepositories(new Product());
     }
 
+    public function index()
+    {
+        $data['product'] = $this->product->getPaginate(12);
+        return view('frontend.product.index',compact('data'));
+    }
+
     public function show($categoriSlug,$productSlug)
     {
         $data['product'] = $this->product->Query()->where('slug',$productSlug)->first();
+        $data['product_related'] = $this->product->Query()->whereNotIn('slug',[$productSlug])->limit(4)->get();
         return view('frontend.product.show',compact('data'));
     }
 }

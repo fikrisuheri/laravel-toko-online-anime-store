@@ -1069,6 +1069,13 @@ ol {
 	margin-bottom: 5px;
 }
 
+
+.title-logo {
+	font-family: "Cookie", cursive;
+	color: #111111;
+	margin-bottom: 5px;
+}
+
 .categories__text h4 {
 	color: #111111;
 	font-weight: 700;
@@ -1603,6 +1610,12 @@ ol {
 	color: #ffffff;
 }
 
+.aktif {
+	background: #0d0d0d;
+	border-color: #0d0d0d;
+	color: #ffffff !important;
+}
+
 /*---------------------
   Product Details
 -----------------------*/
@@ -2010,7 +2023,7 @@ ol {
 	left: 0;
 	top: 13px;
 	height: 1px;
-	width: 335px;
+	width: 480px;
 	background: #e1e1e1;
 	content: "";
 }
@@ -2020,7 +2033,7 @@ ol {
 	right: 0;
 	top: 13px;
 	height: 1px;
-	width: 335px;
+	width: 480px;
 	background: #e1e1e1;
 	content: "";
 }
@@ -3180,10 +3193,10 @@ ol {
 		padding: 5px 15px 5px 15px;
 	}
 	.nav::before {
-		width: 240px;
+		width: 340px;
 	}
 	.nav::after {
-		width: 240px;
+		width: 340px;
 	}
 }
 
@@ -3213,10 +3226,10 @@ ol {
 		margin-bottom: 50px;
 	}
 	.nav::before {
-		width: 125px;
+		width: 225px;
 	}
 	.nav::after {
-		width: 125px;
+		width: 225px;
 	}
 	.discount__content {
 		margin-bottom: 40px;
@@ -3624,6 +3637,9 @@ ol {
 @media only screen and (max-width: 479px) {
 	.categories__item.categories__large__item {
 		padding-left: 30px;
+	}
+	.categories__item {
+		margin-right: 0px !important;
 	}
 	.banner__text h1 {
 		font-size: 45px;
