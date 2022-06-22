@@ -11,4 +11,7 @@ return [
     'dialog_yes'        => 'Ya, Hapus',
     'dialog_no'         => 'Batalkan',
     'dialog_process'    => 'Data Berhasil di Hapus !',
+
+    'cart_success'      => 'Berhasil Menambahkan Produk Ke Keranjang',
+    'cart_delete'       => 'Berhasil Menghapusn Produk Dari Keranjang',
 ];

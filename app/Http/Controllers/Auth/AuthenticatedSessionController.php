@@ -32,7 +32,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if(auth()->user()->getRoleNames()->contains('admin')) {
+            return redirect()->route('admin.dashboard');
+        }else{
+            return redirect()->route('home');
+        }
     }
 
     /**

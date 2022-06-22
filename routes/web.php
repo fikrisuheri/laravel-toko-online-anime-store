@@ -3,9 +3,13 @@
 use App\Http\Controllers\Backend\Feature\OrderController;
 use App\Http\Controllers\Backend\Master\CategoryController;
 use App\Http\Controllers\Backend\Master\ProductController;
+use App\Http\Controllers\Frontend\AccountController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
+use App\Http\Controllers\Rajaongkir\RajaongkirController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Contracts\Role;
@@ -63,13 +67,40 @@ Route::prefix('app')->group(function () {
 
 });
 
+Route::middleware('auth','role:user')->group(function(){
+
+    Route::prefix('cart')->name('cart.')->group(function(){
+        Route::get('/',[CartController::class,'index'])->name('index');
+        Route::post('/store',[CartController::class,'store'])->name('store');
+        Route::get('/delete/{id}',[CartController::class,'delete'])->name('delete');
+    });
+
+    Route::prefix('checkout')->name('checkout.')->group(function(){
+        Route::get('/',[CheckoutController::class,'index'])->name('index');
+    });
+
+    Route::prefix('account')->name('account.')->group(function(){
+        Route::get('/',[AccountController::class,'index'])->name('index');
+    });
+
+
+});
+
+Route::prefix('rajaongkir')->name('rajaongkir.')->group(function(){
+    Route::get('/province/{id}',[RajaongkirController::class,'getCity'])->name('city');
+});
+
+
 Route::get('/', [HomeController::class,'index'])->name('home');
 // Route Product
 Route::get('/product', [FrontendProductController::class,'index'])->name('product.index');
 
+
+
 // Ruote Category
 Route::get('/category', [FrontendCategoryController::class,'index'])->name('category.index');
 Route::get('/category/{slug}', [FrontendCategoryController::class,'show'])->name('category.show');
+
 
 
 Route::get('/{categoriSlug}/{productSlug}',[FrontendProductController::class,'show'])->name('product.show');

@@ -11,4 +11,7 @@ return [
     'dialog_yes'        => 'Sure, Delete',
     'dialog_no'         => 'Cancel',
     'dialog_process'    => 'Poof! Your imaginary file has been deleted!',
+
+    'cart_success'      => 'Success Added Product To Cart',
+    'cart_delete'       => 'Success Deleted Product From Cart',
 ];

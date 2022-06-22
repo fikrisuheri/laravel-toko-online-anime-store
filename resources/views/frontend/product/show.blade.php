@@ -40,17 +40,21 @@
                             <i class="fa fa-star"></i>
                             <span>( 138 reviews )</span>
                         </div>
+                        <form action="{{ route('cart.store') }}" method="POST">
                         <div class="product__details__price">{{ $data['product']->price }} <span></div>
+                        @csrf
                         <div class="product__details__button">
                             <div class="quantity">
                                 <span>Jumlah:</span>
                                 <div class="pro-qty">
-                                    <input type="text" value="1">
+                                    <input type="text" name="cart_qty" value="1">
                                 </div>
+                                <input type="hidden" name="cart_product_id" value="{{ $data['product']->id }}">
                             </div>
-                            <a href="#" class="cart-btn"><span class="icon_bag_alt"></span> Tambah Ke Keranjang</a>
+                            <button type="submit" class="cart-btn"><span class="icon_bag_alt"></span> Tambah Ke Keranjang</button>
                         </div>
                         <div class="product__details__widget">
+                        </form>
                             <ul>
                                 <li>
                                     <span>Berat : </span>

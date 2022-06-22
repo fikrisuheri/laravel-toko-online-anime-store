@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Feature\Cart;
 use App\Models\Master\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,7 +29,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = Category::all();
-        view()->share('siteCategories',$categories);
+        view()->composer('*', function($view)
+        {
+            if (Auth::check()) {
+                $totalCart = Cart::where(['user_id' => Auth::user()->id])->count();
+                $view->with('totalCart',$totalCart);
+            }
+        });
     }
 }

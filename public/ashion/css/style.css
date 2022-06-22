@@ -1809,6 +1809,7 @@ ol {
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 10px;
+	border:none;
 }
 
 .product__details__button ul {
@@ -2363,6 +2364,41 @@ ol {
 	padding-left: 20px;
 	color: #666666;
 }
+
+.checkout__form .checkout__form__input select {
+	height: 50px;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+	margin-bottom: 25px;
+	font-size: 14px;
+	padding-left: 20px;
+	color: #666666;
+}
+
+.select2.select2-container {
+	width: 100% !important;
+	height: 50px;
+  }
+  
+  .select2.select2-container .select2-selection {
+	height: 50px;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+	margin-bottom: 25px;
+	font-size: 14px;
+	padding-left: 20px;
+	padding-top:6px;
+	color: #666666;
+	transition: all .15s ease-in-out;
+  }
+.select2.select2-container .select2-selection .select2-selection__rendered {
+	color: #666;
+	font-size: 14px;
+  }
+
+  
 
 .checkout__form .checkout__form__input input::-webkit-input-placeholder {
 	color: #666666;

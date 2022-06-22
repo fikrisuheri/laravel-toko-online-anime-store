@@ -82,6 +82,7 @@ class CrudRepositories {
         }
         return $model->forceDelete();
     }
+    
 
     public function Query()
     {
