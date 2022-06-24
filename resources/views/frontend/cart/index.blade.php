@@ -48,7 +48,7 @@
                                         <td class="cart__price">{{ $carts->Product->price_rupiah }}</td>
                                         <td class="cart__quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="{{ $carts->qty }}">
+                                                <input type="text" value="{{ $carts->qty }}" >
                                             </div>
                                         </td>
                                         <td class="cart__total">{{ rupiah($carts->total_price_per_product) }}</td>
@@ -63,7 +63,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="cart__btn">
-                        <a href="#">Continue Shopping</a>
+                        <a href="{{ route('product.index') }}">Continue Shopping</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">

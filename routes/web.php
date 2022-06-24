@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryControll
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
+use App\Http\Controllers\Frontend\TransacationController;
 use App\Http\Controllers\Rajaongkir\RajaongkirController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,7 @@ Route::prefix('app')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::get('dashboard', function () {
             return view('backend.dashboard');
-        })->name('dashboard');
+        })->name('admin.dashboard');
 
         Route::prefix('user')->name('user.')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('index');
@@ -75,8 +76,13 @@ Route::middleware('auth','role:user')->group(function(){
         Route::get('/delete/{id}',[CartController::class,'delete'])->name('delete');
     });
 
+    Route::prefix('transaction')->name('transaction.')->group(function(){
+        Route::get('/',[TransacationController::class,'index'])->name('index');
+    });
+
     Route::prefix('checkout')->name('checkout.')->group(function(){
         Route::get('/',[CheckoutController::class,'index'])->name('index');
+        Route::post('/process',[CheckoutController::class,'process'])->name('process');
     });
 
     Route::prefix('account')->name('account.')->group(function(){
@@ -87,6 +93,7 @@ Route::middleware('auth','role:user')->group(function(){
 });
 
 Route::prefix('rajaongkir')->name('rajaongkir.')->group(function(){
+    Route::post('/cost',[RajaongkirController::class,'cost'])->name('cost');
     Route::get('/province/{id}',[RajaongkirController::class,'getCity'])->name('city');
 });
 
@@ -103,7 +110,7 @@ Route::get('/category/{slug}', [FrontendCategoryController::class,'show'])->name
 
 
 
-Route::get('/{categoriSlug}/{productSlug}',[FrontendProductController::class,'show'])->name('product.show');
+Route::get('/product/{categoriSlug}/{productSlug}',[FrontendProductController::class,'show'])->name('product.show');
 
 
 require __DIR__ . '/auth.php';

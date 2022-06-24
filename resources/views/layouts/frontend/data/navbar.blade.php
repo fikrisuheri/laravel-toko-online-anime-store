@@ -42,7 +42,7 @@
                          @auth
                           <li class="{{ request()->is('category*') ? 'active' : '' }}"><a href="#"><i class="fa fa-angle-down"></i> {{ auth()->user()->name }}</a>
                             <ul class="dropdown">
-                                <li><a href="./product-details.html">Riwayat Belanja</a></li>
+                                <li><a href="{{ route('transaction.index') }}">Riwayat Belanja</a></li>
                                 <li><a href="{{ route('account.index') }}">Pengaturan Akun</a></li>
                                 <li><a href="{{ route('category.index') }}">Logout</a></li>
                             </ul>

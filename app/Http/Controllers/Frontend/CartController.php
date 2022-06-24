@@ -36,7 +36,7 @@ class CartController extends Controller
                     'user_id'    => auth()->user()->id,
                 ]);
             }
-            return redirect()->back()->with('success',__('message.cart_success'));
+            return redirect()->route('cart.index')->with('success',__('message.cart_success'));
         } catch (\Throwable $th) {
             dd($th);
         }

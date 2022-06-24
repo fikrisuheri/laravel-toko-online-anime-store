@@ -59,9 +59,9 @@ class RajaongkirService
         return $this->apiCall('/city?province=' . $province_id);
     }
 
-    public function cost()
+    public function cost($origin,$destination,$weight,$courier)
     {  
-        $field = 'origin=501&destination=114&weight=1700&courier=jne';
+        $field = 'origin='.$origin.'&destination='.$destination.'&weight='.$weight.'&courier=' . $courier;
         return $this->apiCall('/cost',$field,'POST');
     }
 }

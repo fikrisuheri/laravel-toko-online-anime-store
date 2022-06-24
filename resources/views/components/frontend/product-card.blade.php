@@ -6,7 +6,6 @@
             <li><a href="{{ $image }}"
                     class="image-popup"><span class="arrow_expand"></span></a></li>
             <li><a href="{{ $route }}"><span><i class="fa fa-eye"></i></span></a></li>
-            <li><a href="#"><span><i class="fa fa-cart-plus"></i></span></a></li>
         </ul>
     </div>
     <div class="product__item__text">

@@ -2379,6 +2379,7 @@ ol {
 .select2.select2-container {
 	width: 100% !important;
 	height: 50px;
+	margin-bottom: 25px !important;
   }
   
   .select2.select2-container .select2-selection {
@@ -2386,7 +2387,7 @@ ol {
 	width: 100%;
 	border: 1px solid #e1e1e1;
 	border-radius: 2px;
-	margin-bottom: 25px;
+	margin-bottom: 25px !important;
 	font-size: 14px;
 	padding-left: 20px;
 	padding-top:6px;

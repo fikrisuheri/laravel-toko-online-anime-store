@@ -20,4 +20,9 @@ class RajaongkirController extends Controller
     {
         return $this->rajaongkirService->getCity($province_id);
     }
+
+    public function cost(Request $request)
+    {
+        return $this->rajaongkirService->cost($request->origin,$request->destination,$request->weight,$request->courier);
+    }
 }

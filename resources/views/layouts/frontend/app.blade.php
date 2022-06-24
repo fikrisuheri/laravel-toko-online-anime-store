@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <head>
     @include('layouts.frontend.data.styles')
 </head>

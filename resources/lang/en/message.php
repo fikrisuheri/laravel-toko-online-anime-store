@@ -14,4 +14,6 @@ return [
 
     'cart_success'      => 'Success Added Product To Cart',
     'cart_delete'       => 'Success Deleted Product From Cart',
+
+    'order_success'     => 'Success Created Order',
 ];

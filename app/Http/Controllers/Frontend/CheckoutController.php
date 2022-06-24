@@ -5,24 +5,37 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Feature\Cart;
 use App\Repositories\CrudRepositories;
+use App\Services\Feature\CartService;
+use App\Services\Feature\CheckoutService;
 use App\Services\Rajaongkir\RajaongkirService;
+use Exception;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
 
-    protected $cart,$province;
-    protected $rajaongkirService;
-    public function __construct(Cart $cart,RajaongkirService $rajaongkirService)
+    protected $rajaongkirService,$checkoutService,$cartService;
+    public function __construct(RajaongkirService $rajaongkirService,CheckoutService $checkoutService,CartService $cartService)
     {
-        $this->cart = new CrudRepositories($cart);
+        $this->cartService = $cartService;
         $this->rajaongkirService = $rajaongkirService;
+        $this->checkoutService = $checkoutService;
     }
 
     public function index()
     {
-        $data['carts'] = $this->cart->Query()->where('user_id',auth()->user()->id)->get();
+        $data['carts'] = $this->cartService->getUserCart();
         $data['provinces'] = $this->rajaongkirService->getProvince();
         return view('frontend.checkout.index',compact('data'));
+    }
+
+    public function process(Request $request)
+    {
+        try{
+            $this->checkoutService->process($request->all());
+            return redirect()->route('transaction.index')->with('success',__('message.order_success'));
+        }catch(Exception $e){
+            dd($e);
+        }
     }
 }

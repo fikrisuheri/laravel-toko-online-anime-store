@@ -14,4 +14,6 @@ return [
 
     'cart_success'      => 'Berhasil Menambahkan Produk Ke Keranjang',
     'cart_delete'       => 'Berhasil Menghapusn Produk Dari Keranjang',
+
+    'order_success'     => 'Berhasil Membuat Pesanan',
 ];
