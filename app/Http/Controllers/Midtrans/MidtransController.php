@@ -73,4 +73,9 @@ class MidtransController extends Controller
         // Simpan transaksi
         $transaction->save();
     }
+
+    public function success()
+    {
+        return redirect()->route('transaction.index')->with('success','Pembayaran Berhasil')
+    }
 }
