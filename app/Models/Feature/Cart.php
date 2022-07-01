@@ -22,4 +22,10 @@ class Cart extends Model
         return $price;
     }
 
+    public function getTotalWeightPerProductAttribute()
+    {
+        $weight = $this->qty * $this->Product->weight;
+        return $weight;
+    }
+
 }

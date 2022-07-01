@@ -5,6 +5,7 @@ use App\Models\Feature\Order;
 use App\Models\Feature\OrderDetail;
 use App\Repositories\CrudRepositories;
 use Illuminate\Support\Str;
+
 class CheckoutService{
 
     protected $order,$ordeDetail;
@@ -23,7 +24,6 @@ class CheckoutService{
         $total_pay = $subtotal + $request['shipping_cost']; 
         $dataOrder = [
             'invoice_number' => strtoupper(Str::random('6')),
-            'user_id' => auth()->user()->id,
             'total_pay' => $total_pay,
             'recipient_name' => $request['recipient_name'],
             'destination' =>  $request['city_id'] . ', ' . $request['province_id'] ,
@@ -32,8 +32,9 @@ class CheckoutService{
             'subtotal' => $subtotal,
             'shipping_cost' => $request['shipping_cost'],
             'shipping_method' => $request['shipping_method'],
-            'total_weight' => 2000,
-            'status' => 0
+            'total_weight' => $request['total_weight'],
+            'status' => 0,
+            'user_id' => auth()->user()->id
         ];
         $orderStore = $this->order->store($dataOrder);
         foreach($userCart as $cart){

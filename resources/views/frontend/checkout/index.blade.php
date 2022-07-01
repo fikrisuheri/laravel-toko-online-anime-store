@@ -29,6 +29,12 @@
                                     <input type="text" name="recipient_name" value="{{ auth()->user()->name }}" required>
                                 </div>
                             </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="checkout__form__input">
+                                    <p>Phone Number <span>*</span></p>
+                                    <input type="text" name="phone_number"  required>
+                                </div>
+                            </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Province <span>*</span></p>
@@ -88,6 +94,11 @@
                                             {{ $cart->qty }}<span>{{ rupiah($cart->total_price_per_product) }}</span>
                                         </li>
                                     @endforeach
+                                    <li>
+                                        <span class="top__text">Total Weight</span>
+                                        <span class="top__text__right">{{ $data['carts']->sum('total_weight_per_product') / 1000 }} Kg</span>
+                                        <input type="hidden" name="total_weight" id="total_weight" value="{{ $data['carts']->sum('total_weight_per_product') }}">
+                                    </li>
                                 </ul>
                             </div>
                             <div class="checkout__order__total">
@@ -113,7 +124,7 @@
         function checkCost() {
             var origin = '103';
             var destination = $('#city_id option:selected').data('id');
-            var weight = '1000';
+            var weight = "{{ $data['carts']->sum('total_weight_per_product') }}";
             var courier = $('#courier option:selected').val();
 
             let _url = `/rajaongkir/cost`;

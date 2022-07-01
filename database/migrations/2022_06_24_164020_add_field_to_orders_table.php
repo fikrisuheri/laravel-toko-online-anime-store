@@ -16,6 +16,7 @@ class AddFieldToOrdersTable extends Migration
         Schema::table('orders', function (Blueprint $table) {
             $table->timestamp('paid_at')->nullable();
             $table->string('recipient_name');
+            $table->string('snap_token')->nullable();
             $table->string('destination');
             $table->string('address_detail');
             $table->string('courier');
