@@ -27,7 +27,7 @@
                             <td>{{ $order->created_at }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
-                                    <a class="dropdown-item has-icon" href="#"><i class="fa fa-eye"></i>
+                                    <a class="dropdown-item has-icon" href="{{ route('feature.order.show',$order->id) }}"><i class="fa fa-eye"></i>
                                         {{ __('button.detail') }}</a>
                                     @if ($order->status == 1)
                                     <a class="dropdown-item has-icon" href="#"><i class="fa fa-truck"></i>

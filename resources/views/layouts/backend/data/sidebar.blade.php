@@ -26,6 +26,13 @@
               <li><a class="nav-link" href="{{ route('feature.order.index',4) }}">{{ __('menu.order_canceled') }}</a></li>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link has-dropdown"><i class="fas fa-cog"></i><span>{{ __('menu.setting') }}</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="{{ route('master.category.index') }}">{{ __('menu.setting_web') }}</a></li>
+              <li><a class="nav-link" href="{{ route('setting.shipping') }}">{{ __('menu.setting_address') }}</a></li>
+            </ul>
+          </li>
         </ul>
     </aside>
   </div>

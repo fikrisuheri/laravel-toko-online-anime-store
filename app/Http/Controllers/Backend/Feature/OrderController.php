@@ -24,4 +24,10 @@ class OrderController extends Controller
         }
         return view('backend.feature.order.index',compact('data'));
     }
+
+    public function show($id)
+    {
+        $data['order'] = Order::find($id);
+        return view('backend.feature.order.show',compact('data'));
+    }
 }

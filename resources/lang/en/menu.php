@@ -14,4 +14,8 @@ return [
     'order_completed'   => 'Completed Order',
     'order_canceled'   => 'Canceled Order',
     
+    // Setting
+    'setting'           => 'Settings',
+    'setting_address'   => 'Shipping Address',
+    'setting_web'       => 'Application Setting',
 ];

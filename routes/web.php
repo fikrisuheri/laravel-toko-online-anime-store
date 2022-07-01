@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\ProductController as FrontendProductController
 use App\Http\Controllers\Frontend\TransacationController;
 use App\Http\Controllers\Midtrans\MidtransController;
 use App\Http\Controllers\Rajaongkir\RajaongkirController;
+use App\Http\Controllers\Setting\WebconfigController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Contracts\Role;
@@ -65,7 +66,13 @@ Route::prefix('app')->group(function () {
 
             Route::prefix('order')->name('order.')->group(function(){
                 Route::get('/{status?}',[OrderController::class,'index'])->name('index');
+                Route::get('/detail/{id}',[OrderController::class,'show'])->name('show');
             });
+
+        });
+
+        Route::prefix('setting')->name('setting.')->group(function(){
+                Route::get('/shipping',[WebconfigController::class,'shipping'])->name('shipping');
 
         });
 
