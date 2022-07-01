@@ -8,5 +8,6 @@ class VerifyCsrfToken extends Middleware
 {
     protected $except = [
         'payments/midtrans-notification',
+        'payments/midtrans-success',
     ];
 }
