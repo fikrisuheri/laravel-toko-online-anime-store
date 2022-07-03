@@ -52,6 +52,9 @@ Route::prefix('app')->group(function () {
                 Route::get('/create',[CategoryController::class,'create'])->name('create');
                 Route::post('/create',[CategoryController::class,'store'])->name('store');
                 Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('delete');
+                Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
+                Route::post('/update/{id}',[CategoryController::class,'update'])->name('update');
+                Route::get('/show/{id}',[CategoryController::class,'show'])->name('show');
             });
 
             Route::prefix('product')->name('product.')->group(function(){
@@ -81,7 +84,7 @@ Route::prefix('app')->group(function () {
 
 });
 
-// Route::middleware('auth','role:user')->group(function(){
+Route::middleware('auth','role:user')->group(function(){
 
     Route::prefix('cart')->name('cart.')->group(function(){
         Route::get('/',[CartController::class,'index'])->name('index');
@@ -92,6 +95,8 @@ Route::prefix('app')->group(function () {
     Route::prefix('transaction')->name('transaction.')->group(function(){
         Route::get('/',[TransacationController::class,'index'])->name('index');
         Route::get('/{invoice_number}',[TransacationController::class,'show'])->name('show');
+        Route::get('/{invoice_number}/received',[TransacationController::class,'received'])->name('received');
+        Route::get('/{invoice_number}/canceled',[TransacationController::class,'canceled'])->name('canceled');
     });
 
     Route::prefix('checkout')->name('checkout.')->group(function(){
@@ -104,7 +109,7 @@ Route::prefix('app')->group(function () {
     });
 
 
-// });
+});
 
 Route::prefix('rajaongkir')->name('rajaongkir.')->group(function(){
     Route::post('/cost',[RajaongkirController::class,'cost'])->name('cost');

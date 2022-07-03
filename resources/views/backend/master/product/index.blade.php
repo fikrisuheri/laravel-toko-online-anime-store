@@ -16,6 +16,7 @@
                         <th>{{ __('field.category_name') }}</th>
                         <th>{{ __('field.thumbnails') }}</th>
                         <th>{{ __('field.price') }}</th>
+                        <th>{{ __('text.sold') }}</th>
                         <th>{{ __('field.created_at') }}</th>
                         <th>{{ __('field.action') }}</th>
                     </tr>
@@ -27,7 +28,8 @@
                             <td>{{ $product->category->name }}</td>
                             <td><img src="{{ $product->thumbnails_path }}" class="img-thumbnail" width="100" alt=""></td>
                             <td>{{ $product->price }}</td>
-                            <td>{{ $product->created_at }}</td>
+                            <td>{{ $product->total_sold }}</td>
+                            <td>{{ tanggal($product->created_at) }}</td>
                             <td>
                                 <x-button.dropdown-button :title="__('field.action')">
                                     <a class="dropdown-item has-icon" href="#"><i class="far fa-edit"></i>

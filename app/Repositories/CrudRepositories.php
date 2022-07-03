@@ -68,15 +68,10 @@ class CrudRepositories {
         return $model;
     }
 
-    public function softDelete($id)
-    {
-        $model = $this->model->find($id);
-        return $model->delete();
-    }
 
     public function hardDelete($id, $isFile = false, $field = null)
     {
-        $model = $this->model->withTrashed()->find($id);
+        $model = $this->model->find($id);
         if ($isFile == true) {
             File::delete('storage/' . $model[$field]);
         }

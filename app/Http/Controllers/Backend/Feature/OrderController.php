@@ -34,7 +34,7 @@ class OrderController extends Controller
     public function inputResi(Request $request)
     {
         $request->merge(['status' => 2]);
-        $this->order->Query()->where('invoice_number',$request->invoice_number)->update($request->only('receipt_number','status'));
+        $this->order->Query()->where('invoice_number',$request->invoice_number)->first()->update($request->only('status','receipt_number'));
         return back()->with('success',__('message.order_receipt'));
     }
 }

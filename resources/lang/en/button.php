@@ -8,4 +8,5 @@ return [
     'detail'            => 'Detail',
     'cancel'            => 'Cancel',
     'select'            => 'Select',
+    'back'              => 'Back',
 ];

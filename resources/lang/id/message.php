@@ -17,6 +17,8 @@ return [
 
     'order_success'     => 'Berhasil Membuat Pesanan',
     'order_receipt'     => 'Berhasil Menginput Nomor Resi',
+    'order_received'    => 'Pesanan Berhasil Diterima,Terimakasih !',
+    'order_canceled'    => 'Pesanan Telah Dibatalkan',
 
     'order_track_create'=> 'Pesanan Dibuat',
     'order_track_paid'  => 'Pesanan Telah Dibayar Pembeli',

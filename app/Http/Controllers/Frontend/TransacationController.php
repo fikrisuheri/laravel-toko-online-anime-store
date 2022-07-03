@@ -38,4 +38,16 @@ class TransacationController extends Controller
         }
         return view('frontend.transaction.show',compact('data'));
     }
+
+    public function received($invoice_number)
+    {
+        $this->order->Query()->where('invoice_number',$invoice_number)->first()->update(['status' => 3]);
+        return back()->with('success',__('message.order_received'));
+    }
+
+    public function canceled($invoice_number)
+    {
+        $this->order->Query()->where('invoice_number',$invoice_number)->first()->update(['status' => 4]);
+        return back()->with('success',__('message.order_canceled'));
+    }
 }

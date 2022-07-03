@@ -17,6 +17,8 @@ return [
 
     'order_success'     => 'Success Created Order',
     'order_receipt'     => 'Success Input Receipt Number',
+    'order_received'    => 'Success Received Order,Thanks',
+    'order_canceled'    => 'Order Has Been Canceled',
 
     'order_track_create'=> 'Order Created',
     'order_track_paid'  => 'Buyer Has Paid For The Order',

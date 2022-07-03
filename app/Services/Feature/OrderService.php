@@ -14,7 +14,7 @@ class OrderService{
 
     public function getUserOrder($user_id)
     {
-        return $this->order->Query()->where('user_id',$user_id)->get();
+        return $this->order->Query()->where('user_id',$user_id)->orderBy('id','desc')->get();
     }
 
 }
