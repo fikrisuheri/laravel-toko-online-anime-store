@@ -67,6 +67,7 @@ Route::prefix('app')->group(function () {
             Route::prefix('order')->name('order.')->group(function(){
                 Route::get('/{status?}',[OrderController::class,'index'])->name('index');
                 Route::get('/detail/{id}',[OrderController::class,'show'])->name('show');
+                Route::post('/detail/input-resi',[OrderController::class,'inputResi'])->name('inputresi');
             });
 
         });
@@ -80,7 +81,7 @@ Route::prefix('app')->group(function () {
 
 });
 
-Route::middleware('auth','role:user')->group(function(){
+// Route::middleware('auth','role:user')->group(function(){
 
     Route::prefix('cart')->name('cart.')->group(function(){
         Route::get('/',[CartController::class,'index'])->name('index');
@@ -103,7 +104,7 @@ Route::middleware('auth','role:user')->group(function(){
     });
 
 
-});
+// });
 
 Route::prefix('rajaongkir')->name('rajaongkir.')->group(function(){
     Route::post('/cost',[RajaongkirController::class,'cost'])->name('cost');

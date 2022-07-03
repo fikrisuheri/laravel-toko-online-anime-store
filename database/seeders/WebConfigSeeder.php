@@ -18,7 +18,7 @@ class WebConfigSeeder extends Seeder
         //     0 = TEXT,
         //     1 = TEXTAREA,
         //     2 = FILE,
-        //     3 = SELECT
+        //     3 = SELECT, 
         // ] 
 
         // WEB
@@ -33,6 +33,12 @@ class WebConfigSeeder extends Seeder
             'name'  => 'app_logo',
             'label' => 'Logo',
             'type'  => 2
+        ]);
+
+        WebConfig::create([
+            'name'  => 'shipping_province_id',
+            'label' => 'Provinsi',
+            'type'  => 3
         ]);
 
         WebConfig::create([

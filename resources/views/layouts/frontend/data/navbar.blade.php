@@ -44,7 +44,14 @@
                             <ul class="dropdown">
                                 <li><a href="{{ route('transaction.index') }}">Riwayat Belanja</a></li>
                                 <li><a href="{{ route('account.index') }}">Pengaturan Akun</a></li>
-                                <li><a href="{{ route('category.index') }}">Logout</a></li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <li>
+                                        <a href="{{ route('logout')  }}" onclick="event.preventDefault();
+                                        this.closest('form').submit();" > Logout
+                                    </a>
+                                    </li>
+                                </form>
                             </ul>
                         </li>
                              @else

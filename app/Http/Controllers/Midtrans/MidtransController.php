@@ -23,6 +23,6 @@ class MidtransController extends Controller
 
     public function success()
     {
-        return redirect()->route('transaction.index')->with('success','Pembayaran Berhasil');
+        return view('midtrans.success');
     }
 }

@@ -16,4 +16,12 @@ return [
     'cart_delete'       => 'Success Deleted Product From Cart',
 
     'order_success'     => 'Success Created Order',
+    'order_receipt'     => 'Success Input Receipt Number',
+
+    'order_track_create'=> 'Order Created',
+    'order_track_paid'  => 'Buyer Has Paid For The Order',
+    'order_track_send'  => 'Order Has Been Sent By Seller',
+    'order_track_receive'=> 'Buyer Already Received Order',
+    'order_track_cancel' => 'Buyer Cancel Order',
+    'order_track_expired'=> 'Order Has Expired',
 ];

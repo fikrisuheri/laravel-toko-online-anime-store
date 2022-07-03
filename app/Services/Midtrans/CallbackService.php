@@ -35,11 +35,11 @@ class CallbackService extends Midtrans
         } else if ($status == 'pending') {
             $transaction->status = 0;
         } else if ($status == 'deny') {
-            $transaction->status = 5;
+            $transaction->status = 4;
         } else if ($status == 'expire') {
             $transaction->status = 5;
         } else if ($status == 'cancel') {
-            $transaction->status = 5;
+            $transaction->status = 4;
         }
 
         // Simpan transaksi

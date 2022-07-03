@@ -21,6 +21,11 @@ class Order extends Model
         return $this->hasMany(OrderDetail::class,'order_id','id');
     }
 
+    public function OrderTrack()
+    {
+        return $this->hasMany(OrderTrack::class,'order_id','id');
+    }
+
     public function getStatusNameAttribute()
     {
         $status = [

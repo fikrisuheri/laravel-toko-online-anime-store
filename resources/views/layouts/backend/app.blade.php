@@ -38,6 +38,7 @@
                     </div>
                 </section>
             </div>
+            @stack('modal')
             @include('layouts.backend.data.footer')
         </div>
     </div>w

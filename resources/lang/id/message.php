@@ -16,4 +16,12 @@ return [
     'cart_delete'       => 'Berhasil Menghapusn Produk Dari Keranjang',
 
     'order_success'     => 'Berhasil Membuat Pesanan',
+    'order_receipt'     => 'Berhasil Menginput Nomor Resi',
+
+    'order_track_create'=> 'Pesanan Dibuat',
+    'order_track_paid'  => 'Pesanan Telah Dibayar Pembeli',
+    'order_track_send'  => 'Pesanan Telah Dikirim Penjual',
+    'order_track_receive'=> 'Pembeli Sudah Menerima Pesanan',
+    'order_track_cancel' => 'Pembeli Membatalkan Pesanan',
+    'order_track_expired'=> 'Pesanan Telah Kadaluarsa',
 ];

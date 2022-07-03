@@ -30,4 +30,11 @@ class OrderController extends Controller
         $data['order'] = Order::find($id);
         return view('backend.feature.order.show',compact('data'));
     }
+
+    public function inputResi(Request $request)
+    {
+        $request->merge(['status' => 2]);
+        $this->order->Query()->where('invoice_number',$request->invoice_number)->update($request->only('receipt_number','status'));
+        return back()->with('success',__('message.order_receipt'));
+    }
 }

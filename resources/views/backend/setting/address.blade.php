@@ -22,7 +22,7 @@
             <div class="col">
                 <div class="mb-3">
                     <label>{{ $item['label'] }}</label>
-                    <textarea name="field[{{ $item['id'] }}]" class="summernote @error($item['id'])@endif" rows="3">{{ $item['value'] }}</textarea>
+                    <textarea name="field[{{ $item['id'] }}]" class="form-control @error($item['id'])@endif" rows="3">{{ $item['value'] }}</textarea>
                    @error($item['id'])
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
@@ -48,14 +48,24 @@
                 </div>
             </div>
         </div>
-        @endif
-        @endforeach
-
-        <div class="col">
-            <div class="text-end">
-                <button type="submit" class="btn btn-primary me-0" href="#">Simpan</button>
+        @elseif($item['type'] == 3)
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label>{{ $item['label'] }}</label>
+                    <select name="field[{{ $item['id'] }}]" id="" class="form-control">
+                    </select>
+                   @error($item['id'])
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
         </div>
+        @endif
+        @endforeach
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary me-0" href="#">Simpan</button>
+            </div>
     </div>
         @endslot
     @endcomponent
