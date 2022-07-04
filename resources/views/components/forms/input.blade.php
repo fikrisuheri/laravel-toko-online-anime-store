@@ -10,7 +10,7 @@
             value="{{ old($name) }}" @endif
             {{ $attributes->merge(['class' => 'form-group']) }} {{ $isRequired ? 'required' : '' }}>
     @else
-        <textarea rows="3" class="form-control @error($name) is-invalid @enderror" name="{{ $name }}" id="{{ $id }}"   {{ $attributes->merge(['class' => 'form-group']) }} {{ $isRequired ? 'required' : '' }} >
+        <textarea rows="3" class="summernote @error($name) is-invalid @enderror" name="{{ $name }}" id="{{ $id }}"   {{ $attributes->merge(['class' => 'form-group']) }} {{ $isRequired ? 'required' : '' }} >
          @if ($value !== null && $value !== '')
 {{ $value }}
 @else

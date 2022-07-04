@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Feature\OrderController;
 use App\Http\Controllers\Backend\Master\CategoryController;
 use App\Http\Controllers\Backend\Master\ProductController;
@@ -35,9 +36,7 @@ Route::post('payments/midtrans-success', [MidtransController::class, 'success'])
 
 Route::prefix('app')->group(function () {
     Route::middleware(['auth'])->group(function () {
-        Route::get('dashboard', function () {
-            return view('backend.dashboard');
-        })->name('admin.dashboard');
+        Route::get('dashboard',[DashboardController::class,'index'])->name('admin.dashboard');
 
         Route::prefix('user')->name('user.')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('index');
@@ -61,6 +60,10 @@ Route::prefix('app')->group(function () {
                 Route::get('/',[ProductController::class,'index'])->name('index');
                 Route::get('/create',[ProductController::class,'create'])->name('create');
                 Route::post('/create',[ProductController::class,'store'])->name('store');
+                Route::get('/show/{id}',[ProductController::class,'show'])->name('show');
+                Route::get('/edit/{id}',[ProductController::class,'edit'])->name('edit');
+                Route::post('/update/{id}',[ProductController::class,'update'])->name('update');
+                Route::get('/delete/{id}',[ProductController::class,'delete'])->name('delete');
             });
 
         });

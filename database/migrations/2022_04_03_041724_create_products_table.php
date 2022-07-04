@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('thumbnails');
             $table->string('price');
             $table->string('weight');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }

@@ -35,4 +35,33 @@ class ProductController extends Controller
         $this->product->store($data,true,['thumbnails'],'product/thumbnails');
         return redirect()->route('master.product.index')->with('success',__('message.store'));
     }
+
+    public function show($id)
+    {
+        $data['product'] = $this->product->find($id);
+        return view('backend.master.product.show',compact('data'));
+    }
+
+    public function edit($id)
+    {
+        $data['product'] = $this->product->find($id);
+        $data['category'] = $this->category->get();
+        return view('backend.master.product.edit',compact('data'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        if(isset($request->thumbnails)){
+            $this->product->update($id,$request->all('_token'),true,['thumbnails'],'product/thumbnails');
+        }else{
+            $this->product->update($id,$request->except('_token'));
+        }
+        return redirect()->route('master.product.index')->with('success',__('message.store'));
+    }
+
+    public function delete($id)
+    {
+        $this->product->hardDelete($id);
+        return back()->with('success',__('message.harddelete'));
+    }
 }

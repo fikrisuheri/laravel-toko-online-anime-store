@@ -14,6 +14,7 @@ return [
 
     // Product
     'product_name' => 'Nama Produk',
+    'weight'        => 'Berat',
 
     // Order
     'order_invoice' => 'Invoice',

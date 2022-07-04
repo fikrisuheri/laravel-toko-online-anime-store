@@ -9,6 +9,9 @@
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
+  <link rel="stylesheet" href="{{ asset('stisla') }}/modules/owlcarousel2/owl.carousel.min.css">
+  <link rel="stylesheet" href="{{ asset('stisla') }}/modules/owlcarousel2/owl.theme.default.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('stisla') }}/css/style.css">
   <link rel="stylesheet" href="{{ asset('stisla') }}/css/components.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('datatables') }}/datatables.min.css"/>

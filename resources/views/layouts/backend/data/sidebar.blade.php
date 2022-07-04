@@ -8,6 +8,7 @@
       </div>
       <ul class="sidebar-menu">
           <li class="menu-header">Menu Admin</li>
+          <li><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-tachometer-alt"></i> <span> {{ __('menu.dashboard') }}</span></a></li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-table"></i><span>Master</span></a>
             <ul class="dropdown-menu">

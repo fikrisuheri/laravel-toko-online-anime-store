@@ -37,6 +37,6 @@ class Product extends Model
     {
         return $this->OrderDetails()->whereHas('Order',function($q){
             $q->whereIn('status',[2,3]);
-        })->count();
+        })->sum('qty');
     }
 }

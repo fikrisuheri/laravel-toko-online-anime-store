@@ -14,6 +14,7 @@ return [
 
     // Product
     'product_name' => 'Product Name',
+    
 
     // Order
     'order_invoice' => 'Invoice',

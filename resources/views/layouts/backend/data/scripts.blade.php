@@ -12,10 +12,15 @@
   <!-- JS Libraies -->
 
   <!-- Template JS File -->
+  <script src="{{ asset('stisla') }}/modules/owlcarousel2/owl.carousel.min.js"></script>
+  <script src="{{ asset('stisla') }}/modules/summernote/summernote-bs4.js"></script>
   <script src="{{ asset('stisla') }}/js/scripts.js"></script>
   <script src="{{ asset('stisla') }}/js/custom.js"></script>
   {{-- <script src="{{ asset('stisla') }}/js/page/modules-datatables.js"></script> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="{{ LarapexChart::cdn() }}"></script>
+ 
+
   <script>
     $(() => {
       $("#table-1").dataTable({

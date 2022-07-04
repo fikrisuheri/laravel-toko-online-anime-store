@@ -20,6 +20,8 @@
                     
                     <x-forms.input name="slug" id="slug" :label="__('field.slug')" :isRequired="true" readonly />
 
+                    <x-forms.input type="number" name="weight" id="weight" :label="__('field.weight')" :isRequired="true"/>
+
                     <x-forms.input type="number" name="price" id="price" :label="__('field.price')" :isRequired="true" />
 
                     <x-forms.input type="textarea" name="description" id="description" :label="__('field.description')" :isRequired="true" />
