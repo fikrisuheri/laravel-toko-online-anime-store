@@ -91,3 +91,10 @@ Contributions, issues and feature requests di persilahkan.
 ## Donation
 
 You can support Me On [Saweria](https://saweria.co/fikrisuheri) Or [Traktee](https://trakteer.id/fikri-suheri)
+
+## Preview
+
+![Screenshot 2022-07-04 115800](https://user-images.githubusercontent.com/61069138/177089013-6fc3302f-0daf-4598-9d84-79a709cadfa1.png)
+![Screenshot 2022-07-04 120138](https://user-images.githubusercontent.com/61069138/177089020-91808870-775d-42ad-bc56-41db9d9cee25.png)
+![Screenshot 2022-07-04 120326](https://user-images.githubusercontent.com/61069138/177089026-e700b29a-8120-4f9e-aa8f-3ce76f6ccf54.png)
+![Screenshot 2022-07-04 120307](https://user-images.githubusercontent.com/61069138/177089043-7415b6c6-265f-448b-b67e-3f21face387a.png)
