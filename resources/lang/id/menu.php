@@ -4,6 +4,7 @@ return [
     'trash'             => 'Tempat Sampah',
     'category'          => 'Kategori',
     'product'           => 'Produk',
+    'customer'          => 'Pelanggan',
 
     // Order
     'order'             => 'Pesanan',

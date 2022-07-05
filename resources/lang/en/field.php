@@ -2,6 +2,8 @@
 return [
     // GLobal Field
     'name' => 'Name',
+    'email' => 'Email',
+    'join_at' => 'Join At',
     'slug' => 'Slug',
     'action' => 'Action',
     'thumbnails' => 'Thumbnails',

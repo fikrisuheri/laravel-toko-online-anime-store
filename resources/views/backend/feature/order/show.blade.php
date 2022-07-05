@@ -28,16 +28,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <address>
-                                        <strong>Billed To:</strong><br>
-                                        Ujang Maman<br>
-                                        1234 Main<br>
-                                        Apt. 4B<br>
-                                        Bogor Barat, Indonesia
+                                        <strong>{{ __('text.billed_to') }}:</strong><br>
+                                        {{ $data['order']->Customer->name }}<br>
+                                        {{ $data['order']->Customer->email }}<br>
                                     </address>
                                 </div>
                                 <div class="col-md-6 text-md-right">
                                     <address>
-                                        <strong>Shipped To:</strong><br>
+                                        <strong>{{ __('text.shipped_to') }}:</strong><br>
                                         {{ $data['order']->recipient_name }}<br>
                                         {{ $data['order']->address_detail }}<br>
                                         {{ $data['order']->destination }}
@@ -47,7 +45,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <address>
-                                        <strong>Order Status:</strong>
+                                        <strong>{{ __('text.order_status') }}:</strong>
                                         <div class="mt-2">
                                             {!! $data['order']->status_name !!}
                                         </div>
@@ -55,7 +53,7 @@
                                 </div>
                                 <div class="col-md-6 text-md-right">
                                     <address>
-                                        <strong>Order Date:</strong><br>
+                                        <strong>{{ __('text.order_date') }}:</strong><br>
                                         {{ $data['order']->created_at }}<br><br>
                                     </address>
                                 </div>
@@ -65,8 +63,7 @@
 
                     <div class="row mt-4">
                         <div class="col-md-12">
-                            <div class="section-title">Order Summary</div>
-                            <p class="section-lead">All items here cannot be deleted.</p>
+                            <div class="section-title font-weight-bold">{{ __('text.order_summary') }}</div>
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover table-md">
                                     <tbody>
@@ -94,11 +91,11 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col-lg-8">
-                                    <div class="section-title"> Shipment Method</div>
+                                    <strong>{{ __('text.shipping_method') }}:</strong>
                                     <p class="section-lead text-uppercase">{{ $data['order']->courier }}
                                         {{ $data['order']->shipping_method }}</p>
                                     @if ($data['order']->receipt_number != null)
-                                        <div class="section-title"> Receipt Number</div>
+                                    <strong>{{ __('text.receipt_number') }}:</strong>
                                         <p class="section-lead text-uppercase">{{ $data['order']->receipt_number }} </p>
                                     @endif
                                 </div>
@@ -108,7 +105,7 @@
                                         <div class="invoice-detail-value">{{ rupiah($data['order']->subtotal) }}</div>
                                     </div>
                                     <div class="invoice-detail-item">
-                                        <div class="invoice-detail-name">Shipping</div>
+                                        <div class="invoice-detail-name">{{ __('text.shipping_cost') }}</div>
                                         <div class="invoice-detail-value">{{ rupiah($data['order']->shipping_cost) }}
                                         </div>
                                     </div>

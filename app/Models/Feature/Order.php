@@ -9,7 +9,7 @@ class Order extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $appends = ['status_name','one_product','array_product'];
+    protected $appends = ['status_name','status_name_text','one_product','array_product'];
 
     public function Customer()
     {
@@ -24,6 +24,24 @@ class Order extends Model
     public function OrderTrack()
     {
         return $this->hasMany(OrderTrack::class,'order_id','id');
+    }
+
+    public function getStatusNameTextAttribute()
+    {
+        $status = $this->status;
+        if($status == 0){
+            return 'Pending';
+        }elseif($status == 1){
+            return 'Dikemas';
+        }elseif($status == 2){
+            return 'Dikirim';
+        }elseif($status == 3){
+            return 'Selesai';
+        }elseif($status == 4){
+            return 'Dibatalkan';
+        }else{
+            return 'Kadaluarsa';
+        }
     }
 
     public function getStatusNameAttribute()

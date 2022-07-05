@@ -8,5 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class WebConfig extends Model
 {
     use HasFactory;
-    protected $guarded = [''];
+    protected $guarded = [];
+
+    public function getFilePathAttribute()
+    {
+        if ($this->type == 2) {
+            if ($this->value != null) {
+                return asset('storage/' . $this->value);
+            } else {
+                return asset('default/null/notfound.png');
+            }
+        }
+    }
 }

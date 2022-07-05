@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Charts\OrderCart;
+use App\Charts\OrderChartPie;
 use App\Http\Controllers\Controller;
 use App\Models\Feature\Order;
 use App\Models\Master\Product;
@@ -12,11 +13,12 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    protected $chartOrder;
+    protected $chartOrder,$chartOrderPie;
 
-    public function __construct(OrderCart $chartOrder)
+    public function __construct(OrderCart $chartOrder,OrderChartPie $chartOrderPie)
     {
         $this->chartOrder = $chartOrder;
+        $this->chartOrderPie = $chartOrderPie;
     }
 
     public function index()
@@ -33,7 +35,9 @@ class DashboardController extends Controller
         ->orderByDesc('order_details_sum_qty')
         ->limit(10)
         ->get();
+        $data['last_order'] = Order::orderBy('id','DESC')->limit(5)->get();
         $data['chart'] = $this->chartOrder->build();
+        $data['chartPie'] = $this->chartOrderPie->build();
         return view('backend.dashboard',compact('data'));
     }
 }

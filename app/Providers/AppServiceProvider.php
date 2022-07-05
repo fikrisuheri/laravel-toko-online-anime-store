@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Feature\Cart;
 use App\Models\Master\Category;
+use App\Models\Setting\WebConfig;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -36,5 +37,9 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('totalCart',$totalCart);
             }
         });
+        view()->share([
+            'app_name' => WebConfig::where(['name' => 'app_name'])->first()['value'] ?? '-',
+            'app_logo' => WebConfig::where(['name' => 'app_logo'])->first()['file_path'] ?? '-',
+        ]);
     }
 }

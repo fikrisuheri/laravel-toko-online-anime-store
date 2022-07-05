@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShopShippingsTable extends Migration
+class CreateShippingAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateShopShippingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('shop_shippings', function (Blueprint $table) {
+        Schema::create('shipping_addresses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('city_id')->nullable();
-            $table->text('address_detail');
-            $table->string('postal_code');
+            $table->string('city_id');
+            $table->string('province_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateShopShippingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shop_shippings');
+        Schema::dropIfExists('shipping_addresses');
     }
 }

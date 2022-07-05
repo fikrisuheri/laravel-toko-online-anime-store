@@ -122,7 +122,7 @@
 @push('js')
     <script>
         function checkCost() {
-            var origin = '103';
+            var origin = '{{ $data["shipping_address"]->city_id }}';
             var destination = $('#city_id option:selected').data('id');
             var weight = "{{ $data['carts']->sum('total_weight_per_product') }}";
             var courier = $('#courier option:selected').val();

@@ -27,4 +27,12 @@ class ProductController extends Controller
         $data['product_related'] = $this->product->Query()->whereNotIn('slug',[$productSlug])->limit(4)->get();
         return view('frontend.product.show',compact('data'));
     }
+
+    public function search(Request $request)
+    {
+        $data['product'] = $this->product->Query()->where('name','like','%'.$request->q.'%')->paginate
+        (12);
+
+        return view('frontend.product.search',compact('data'));
+    }
 }

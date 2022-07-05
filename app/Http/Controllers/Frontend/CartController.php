@@ -44,7 +44,7 @@ class CartController extends Controller
 
     public function delete($id)
     {
-        $cart = $this->cart->softDelete($id);
+        $cart = $this->cart->hardDelete($id);
         return back()->with('success',__('message.cart_delete'));
     }
 }

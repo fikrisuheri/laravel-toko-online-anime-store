@@ -4,6 +4,7 @@ return [
     'trash'             => 'Trash',
     'category'          => 'Category',
     'product'          => 'Product',
+    'customer'          => 'Customer',
 
     // Order
     'order'             => 'Order',

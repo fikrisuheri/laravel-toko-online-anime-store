@@ -1,72 +1,58 @@
 @extends('layouts.backend.app')
 @section('content')
     @component('components.backend.card.card-form')
-        @slot('action','')
+        @slot('action', route('setting.shippingUpdate'))
         @slot('content')
-        @foreach ($data['setting'] as $item)
-        @if($item['type'] == 0)
-        <div class="row">
-            <div class="col">
-                <div class="mb-3">
-                    <label>{{ $item['label'] }}</label>
-                    <input name="field[{{ $item['id'] }}]" id="{{ $item['id'] }}" class="form-control @error($item['id']) is-invalid @enderror" 
-                    type="text" autocomplete="false" value="{{ $item['value'] }}">
-                    @error($item['id'])
-                        <p class="text-danger">{{ $message }}</p>
-                    @enderror
-                </div>
+            <div class="form-group">
+                <label for="">Provinsi</label>
+                <select name="province_id" id="province_id" class="form-control">
+                    @foreach ($data['provinces'] as $province)
+                        <option value="{{ $province['province_id'] }}" {{ $data['setting']->province_id == $province['province_id'] ? 'selected' : '' }}>{{ $province['province'] }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
-        </div>
-        @elseif($item['type'] == 1)
-        <div class="row">
-            <div class="col">
-                <div class="mb-3">
-                    <label>{{ $item['label'] }}</label>
-                    <textarea name="field[{{ $item['id'] }}]" class="form-control @error($item['id'])@endif" rows="3">{{ $item['value'] }}</textarea>
-                   @error($item['id'])
-                        <p class="text-danger">{{ $message }}</p>
-                    @enderror
-                </div>
+            <div class="form-group">
+                <label for="">Kota/Kabupaten</label>
+                <select name="city_id" id="city_id" class="form-control">
+                    @foreach ($data['city'] as $city)
+                        <option value="{{ $city['city_id'] }}" {{ $data['setting']->city_id == $city['city_id'] ? 'selected' : '' }}>{{ $city['type'] }} {{ $city['city_name'] }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
-        </div>
-        @elseif($item['type'] == 2)
-        <div class="row">
-            <div class="col">
-                <div class="mb-3">
-                    <img src="{{ $item['file_path'] }}" alt="{{ $item['name'] }}" height="150px" width="150px">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="mb-3">
-                    <label>{{ $item['label'] }}</label>
-                    <input type="file" name="field[{{$item['id']}}]" class="form-control">
-                   @error($item['id'])
-                        <p class="text-danger">{{ $message }}</p>
-                    @enderror
-                </div>
-            </div>
-        </div>
-        @elseif($item['type'] == 3)
-        <div class="row">
-            <div class="col">
-                <div class="mb-3">
-                    <label>{{ $item['label'] }}</label>
-                    <select name="field[{{ $item['id'] }}]" id="" class="form-control">
-                    </select>
-                   @error($item['id'])
-                        <p class="text-danger">{{ $message }}</p>
-                    @enderror
-                </div>
-            </div>
-        </div>
-        @endif
-        @endforeach
             <div class="text-right">
                 <button type="submit" class="btn btn-primary me-0" href="#">Simpan</button>
             </div>
-    </div>
+            </div>
         @endslot
     @endcomponent
 @endsection
+@push('js')
+    <script>
+         $('#province_id').on('change', function() {
+            var provinceId = $('#province_id option:selected').val();
+            $('#city_id').empty();
+            $('#city_id').append('<option value="">-- Loading Data --</option>');
+            $.ajax({
+                url: '/rajaongkir/province/' + provinceId,
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    if (data) {
+                        $('#city_id').empty();
+                        $('#city_id').removeAttr('disabled');
+                        $('select[name="city_id"]').append(
+                            'option value="" selected>-- Select City --</option>');
+                        $.each(data, function(key, city) {
+                            $('select[name="city_id"]').append('<option value="'+city.city_id+'">' + city.type + ' ' + city.city_name +
+                                '</option>');
+                        });
+                    } else {
+                        $('#city_id').empty();
+                    }
+                }
+            });
+        });
+    </script>
+@endpush

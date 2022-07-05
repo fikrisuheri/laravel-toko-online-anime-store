@@ -25,7 +25,7 @@ class WebConfigSeeder extends Seeder
         WebConfig::create([
             'name'  => 'app_name',
             'label' => 'Application Name',
-            'value' => 'PMB',
+            'value' => 'Anime Store',
             'type'  => 0
         ]);
 
@@ -33,30 +33,6 @@ class WebConfigSeeder extends Seeder
             'name'  => 'app_logo',
             'label' => 'Logo',
             'type'  => 2
-        ]);
-
-        WebConfig::create([
-            'name'  => 'shipping_province_id',
-            'label' => 'Provinsi',
-            'type'  => 3
-        ]);
-
-        WebConfig::create([
-            'name'  => 'shipping_province_id',
-            'label' => 'Provinsi',
-            'type'  => 3
-        ]);
-
-        WebConfig::create([
-            'name'  => 'shipping_city_id',
-            'label' => 'Kota',
-            'type'  => 3
-        ]);
-
-        WebConfig::create([
-            'name'  => 'shipping_address',
-            'label' => 'Alamat Lengkap',
-            'type'  => 1
         ]);
         
     }

@@ -39,7 +39,10 @@
                         <label for="">Konfirmasi Kata Sandi</label>
                         <input type="password" name="password_confirmation" class="form-control rounded-0">
                     </div>
-                    <button type="submit" class="site-btn w-100 rounded-0">Daftar</button>
+                    <button type="submit" class="site-btn w-100 rounded-0 mb-3">Daftar</button>
+                    <div class="text-center">
+                        <p>Sudah Punya Akun ? <a href="{{ route('login') }}">Masuk Disini</a></p>
+                    </div>
                 </form>
             </div>
         </div>

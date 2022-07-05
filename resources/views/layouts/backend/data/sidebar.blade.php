@@ -9,6 +9,7 @@
       <ul class="sidebar-menu">
           <li class="menu-header">Menu Admin</li>
           <li><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-tachometer-alt"></i> <span> {{ __('menu.dashboard') }}</span></a></li>
+          <li><a class="nav-link" href="{{ route('customer.index') }}"><i class="fas fa-users"></i> <span> {{ __('menu.customer') }}</span></a></li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-table"></i><span>Master</span></a>
             <ul class="dropdown-menu">
@@ -30,7 +31,7 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-cog"></i><span>{{ __('menu.setting') }}</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="{{ route('master.category.index') }}">{{ __('menu.setting_web') }}</a></li>
+              <li><a class="nav-link" href="{{ route('setting.web') }}">{{ __('menu.setting_web') }}</a></li>
               <li><a class="nav-link" href="{{ route('setting.shipping') }}">{{ __('menu.setting_address') }}</a></li>
             </ul>
           </li>

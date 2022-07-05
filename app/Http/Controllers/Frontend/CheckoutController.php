@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Feature\Cart;
+use App\Models\Setting\ShippingAddress;
 use App\Repositories\CrudRepositories;
 use App\Services\Feature\CartService;
 use App\Services\Feature\CheckoutService;
@@ -26,6 +27,7 @@ class CheckoutController extends Controller
     {
         $data['carts'] = $this->cartService->getUserCart();
         $data['provinces'] = $this->rajaongkirService->getProvince();
+        $data['shipping_address'] = ShippingAddress::first();
         return view('frontend.checkout.index',compact('data'));
     }
 

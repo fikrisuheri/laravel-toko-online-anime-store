@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Feature\OrderController;
 use App\Http\Controllers\Backend\Master\CategoryController;
@@ -37,11 +38,10 @@ Route::post('payments/midtrans-success', [MidtransController::class, 'success'])
 Route::prefix('app')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::get('dashboard',[DashboardController::class,'index'])->name('admin.dashboard');
+        
 
-        Route::prefix('user')->name('user.')->group(function () {
-            Route::get('/', [UserController::class, 'index'])->name('index');
-            Route::get('/create', [UserController::class, 'create'])->name('create');
-            Route::post('/store', [UserController::class, 'store'])->name('store');
+        Route::prefix('customer')->name('customer.')->group(function () {
+            Route::get('/', [CustomerController::class, 'index'])->name('index');
         });
 
         Route::prefix('master')->name('master.')->group(function(){
@@ -80,7 +80,10 @@ Route::prefix('app')->group(function () {
 
         Route::prefix('setting')->name('setting.')->group(function(){
                 Route::get('/shipping',[WebconfigController::class,'shipping'])->name('shipping');
-
+                Route::post('/shipping',[WebconfigController::class,'shippingUpdate'])->name('shippingUpdate');
+                
+                Route::get('/web',[WebconfigController::class,'web'])->name('web');
+                Route::post('/web',[WebconfigController::class,'webUpdate'])->name('web.update');
         });
 
     });
@@ -124,7 +127,7 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 // Route Product
 Route::get('/product', [FrontendProductController::class,'index'])->name('product.index');
 
-
+Route::get('/search',[FrontendProductController::class,'search'])->name('product.search');
 
 // Ruote Category
 Route::get('/category', [FrontendCategoryController::class,'index'])->name('category.index');
