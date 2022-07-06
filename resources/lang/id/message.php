@@ -13,6 +13,7 @@ return [
     'dialog_process'    => 'Data Berhasil di Hapus !',
 
     'cart_success'      => 'Berhasil Menambahkan Produk Ke Keranjang',
+    'cart_update'       => 'Berhasil Mengupdate Keranjang Belanja',
     'cart_delete'       => 'Berhasil Menghapusn Produk Dari Keranjang',
 
     'order_success'     => 'Berhasil Membuat Pesanan',

@@ -6,14 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Feature\Cart;
 use App\Models\Master\Product;
 use App\Repositories\CrudRepositories;
+use App\Services\Feature\CartService;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
     protected $cart;
-    public function __construct(Cart $cart)
+    protected $cartService;
+    public function __construct(Cart $cart,CartService $cartService)
     {
         $this->cart = new CrudRepositories($cart);
+        $this->cartService = $cartService;
     }
 
     public function index()
@@ -25,17 +28,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
         try {
-            $cek = $this->cart->Query()->where(['user_id' => auth()->user()->id,'product_id' => $request->cart_product_id])->first();
-            if($cek){
-                $cek->qty = $cek->qty + $request->cart_qty;
-                $cek->update();
-            }else{
-                $this->cart->store([
-                    'product_id' => $request->cart_product_id,
-                    'qty'        => $request->cart_qty,
-                    'user_id'    => auth()->user()->id,
-                ]);
-            }
+           $this->cartService->store($request);
             return redirect()->route('cart.index')->with('success',__('message.cart_success'));
         } catch (\Throwable $th) {
             dd($th);
@@ -46,5 +39,22 @@ class CartController extends Controller
     {
         $cart = $this->cart->hardDelete($id);
         return back()->with('success',__('message.cart_delete'));
+    }
+
+    public function update(Request $request)
+    {
+        try {
+            $i = 0;
+            foreach($request['cart_id'] as $cart_id)
+            {
+                $cart = $this->cart->find($cart_id);
+                $cart->qty = $request['cart_qty'][$i];
+                $cart->save();
+                $i++;
+            }
+            return redirect()->route('cart.index')->with('success',__('message.cart_update'));
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 }

@@ -95,6 +95,7 @@ Route::middleware('auth','role:user')->group(function(){
     Route::prefix('cart')->name('cart.')->group(function(){
         Route::get('/',[CartController::class,'index'])->name('index');
         Route::post('/store',[CartController::class,'store'])->name('store');
+        Route::post('/update',[CartController::class,'update'])->name('update');
         Route::get('/delete/{id}',[CartController::class,'delete'])->name('delete');
     });
 

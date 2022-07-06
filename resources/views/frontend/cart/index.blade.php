@@ -18,6 +18,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <form action="{{ route('cart.update') }}" method="post">
+                        @csrf
                     <div class="shop__cart__table">
                         <table>
                             <thead>
@@ -46,9 +48,10 @@
                                             </div>
                                         </td>
                                         <td class="cart__price">{{ $carts->Product->price_rupiah }}</td>
+                                        <input type="hidden" name="cart_id[]" value="{{ $carts->id }}">
                                         <td class="cart__quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="{{ $carts->qty }}" >
+                                                <input type="text" value="{{ $carts->qty }}" name="cart_qty[]">
                                             </div>
                                         </td>
                                         <td class="cart__total">{{ rupiah($carts->total_price_per_product) }}</td>
@@ -68,7 +71,8 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="cart__btn update__btn">
-                        <a href="#"><span class="icon_loading"></span> Update cart</a>
+                        <button type="submit"><span class="icon_loading"></span> Update cart</button>
+                    </form>
                     </div>
                 </div>
             </div>
