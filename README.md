@@ -10,6 +10,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fikrisuheri/laravel-toko-online-anime-store)
 </div>
 
+## DIMOHON UNTUK TIDAK DIPERJUALBELIKAN !
 
 ## Fitur apa saja yang tersedia di Aplikasi Toko Online Laravel?
 
